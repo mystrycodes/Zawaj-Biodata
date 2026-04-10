@@ -36,7 +36,7 @@ const MoonIconToggle = () => (
     }
 
     // Scroll animation observer
-    let observer;
+    let observer: IntersectionObserver;
     setTimeout(() => {
       observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
