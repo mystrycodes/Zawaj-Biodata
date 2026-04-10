@@ -82,7 +82,7 @@ export const profile: Profile = {
     {
       label: "Religious/Cultural Preferences",
       value:
-        "Seeking a life partner who firmly adheres to the Qur'an and Sunnah, upholds daily prayers, and observes niqab in accordance with Islamic teachings. A strong commitment to faith, modesty, and righteous living is essential, along with a sincere dedication to Islamic values in both personal and family life."
+        "Seeking a life partner who firmly adheres to the Qur'an and Sunnah, upholds daily prayers, and observes hijab in accordance with Islamic teachings. A strong commitment to faith, modesty, and righteous living is essential, along with a sincere dedication to Islamic values in both personal and family life."
     },
     {
       label: "Personality Traits",
