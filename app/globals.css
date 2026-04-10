@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --gold-primary: #C59D5B;
+  --gold-dark: #8A652B;
+  --maroon: #5E1A1B;
+  --bg-color: #F8F6F2;
+  --card-bg: #ffffff;
+  --text-dark: #2D2D2D;
+  --text-muted: #6B6B6B;
+  --border-color: #f0f0f0;
+  --shadow-color: rgba(0,0,0,0.03);
+  --motif-color: rgba(255, 255, 255, 1);
+  --header-text: #ffffff;
+}
+
+[data-theme='dark'] {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-dark: #eaeaea;
+  --text-muted: #a0a0a0;
+  --border-color: #333333;
+  --shadow-color: rgba(0,0,0,0.3);
+  --gold-primary: #d4ae6b;
+  --gold-dark: #b58d4a;
+  --maroon: #d4ae6b; /* Use gold instead of orange maroon for dark mode */
+  --motif-color: rgba(255, 255, 255, 0.7);
+  --header-text: #f0f0f0;
+}
+
+[data-theme='dark'] .info-section {
+  border: 1px solid rgba(212, 174, 107, 0.15) !important;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  font-family: inherit;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flow-root;
+}
+
+h1, h2, h3, .hero-name {
+  font-family: var(--font-playfair), serif;
+}
+
+/* Base utilities */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 99;
+  background: var(--card-bg);
+  color: var(--text-dark);
+  padding: 0.5rem;
+}
+
+/* Gold Gradient Background */
+.gold-top-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  min-height: 480px;
+  background: linear-gradient(145deg, #e0bf79 0%, #b28c38 100%);
+  z-index: 0; /* Ensures it renders smoothly without being blocked by body background */
+}
+
+/* Floating Theme Toggle */
+.theme-btn-floating {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background-color 0.3s;
+}
+.theme-btn-floating:active {
+  transform: scale(0.9);
+}
+
+/* Bismillah Image Layer */
+.bismillah-img {
+  position: absolute;
+  top: -180px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: 280px;
+  max-width: 80%;
+  height: auto;
+  z-index: 10;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+}
+
+/* Main Content Arch Container */
+.main-content {
+  position: relative;
+  z-index: 5;
+  margin: 220px auto 0;
+  max-width: 1000px;
+  background-color: var(--bg-color);
+  border-radius: 160px 160px 0 0;
+  padding: 210px 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C59D5B' fill-opacity='0.03' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  transition: background-color 0.3s ease;
+}
+
+/* Profile Photo Frame */
+.profile-photo-wrapper {
+  position: absolute;
+  top: -85px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: 280px;
+  height: 300px;
+  background-color: var(--bg-color);
+  padding: 12px;
+  border-radius: 150px 150px 0 0;
+  box-shadow: 0 -10px 40px rgba(197, 157, 91, 0.25);
+  transition: background-color 0.3s ease;
+}
+.profile-photo-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 140px 140px 6px 6px;
+  border: 4px solid var(--gold-primary);
+}
+.profile-photo-inner img {
+  object-fit: cover;
+}
+
+/* Hero Content */
+.hero-name {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--maroon);
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.tags-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0.8rem 0;
+}
+.tag-badge {
+  background-color: var(--card-bg);
+  color: var(--text-dark);
+  font-size: 0.85rem;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(197, 157, 91, 0.15);
+  font-weight: 500;
+  border: 1px solid rgba(197, 157, 91, 0.4);
+  transition: all 0.3s ease;
+}
+.tag-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(197, 157, 91, 0.3);
+  border-color: var(--gold-primary);
+}
+
+.hero-lead {
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-dark);
+  margin: 1rem 0 1.5rem;
+  max-width: 600px;
+}
+
+/* Sections Configuration */
+.sections-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.info-section {
+  background: var(--card-bg);
+  padding: 1.8rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+.info-section h2 {
+  font-size: 1.25rem;
+  color: var(--maroon);
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+.info-section h3 {
+  font-size: 1rem;
+  color: var(--gold-dark);
+  margin: 1rem 0 0.3rem;
+}
+.info-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.8rem;
+}
+.info-row strong {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+.info-row span, .info-row p {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+.list-block {
+  margin-bottom: 1rem;
+}
+.list-block:last-child {
+  margin-bottom: 0;
+}
+ul.bullet-list {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin: 0.5rem 0;
+}
+ul.bullet-list li {
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Gallery Carousel */
+.carousel-shell {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  border: 1px solid var(--border-color);
+}
+.carousel-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+.carousel-image {
+  object-fit: cover;
+  filter: sepia(0.35) contrast(1.05) brightness(0.95);
+  transition: filter 0.4s ease;
+}
+.carousel-shell:hover .carousel-image {
+  filter: sepia(0) contrast(1) brightness(1);
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--maroon);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+.carousel-btn.prev { left: 0.5rem; }
+.carousel-btn.next { right: 0.5rem; }
+.carousel-dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: 1px solid rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+.dot.active {
+  background: var(--gold-primary);
+  border-color: var(--gold-primary);
+  transform: scale(1.2);
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  grid-column: 1 / -1;
+}
+
+/* Responsive Overrides */
+@media (max-width: 900px) {
+  .sections-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin: 200px auto 0;
+    border-radius: 120px 120px 0 0;
+    padding: 210px 1.5rem 2rem;
+  }
+  .gold-top-bg {
+    height: 480px;
+    min-height: auto;
+  }
+  .carousel-image-wrap {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .bismillah-img {
+    width: 220px;
+    top: -150px;
+  }
+  .main-content {
+    margin: 180px auto 0;
+    border-radius: 100px 100px 0 0;
+    padding: 200px 1rem 1rem;
+  }
+  .profile-photo-wrapper {
+    width: 240px;
+    height: 260px;
+    top: -70px;
+  }
+  .carousel-image-wrap {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* Scroll Animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
