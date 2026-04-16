@@ -9,13 +9,42 @@ type GalleryCarouselProps = {
 
 export function GalleryCarousel({ images }: GalleryCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
   const total = images.length;
 
   const showPrev = () => setActiveIndex((prev) => (prev - 1 + total) % total);
   const showNext = () => setActiveIndex((prev) => (prev + 1) % total);
 
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEndHandler = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > minSwipeDistance) {
+      showNext();
+    } else if (distance < -minSwipeDistance) {
+      showPrev();
+    }
+  };
+
   return (
-    <div className="carousel-shell">
+    <div 
+      className="carousel-shell"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEndHandler}
+    >
       <div className="carousel-image-wrap">
         <Image
           src={images[activeIndex]}

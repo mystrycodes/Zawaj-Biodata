@@ -179,7 +179,7 @@ const MoonIconToggle = () => (
           <div style={{ padding: '0 0 2rem', display: 'flex', justifyContent: 'center' }}>
             <div style={{ width: '60px', height: '1px', backgroundColor: 'var(--gold-primary)', opacity: 0.5 }}></div>
           </div>
-          <p style={{ fontFamily: 'var(--font-playfair), serif', fontSize: '1.2rem', color: 'var(--gold-dark)', margin: '0', fontStyle: 'italic' }}>BarakAllah Feekum</p>
+          <p style={{ fontFamily: 'var(--font-playfair), serif', fontSize: '1.2rem', color: 'var(--gold-dark)', margin: '0', fontStyle: 'italic' }}>Jazak Allah Khair</p>
         </footer>
       </main>
 

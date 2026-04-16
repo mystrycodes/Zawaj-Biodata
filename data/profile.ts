@@ -28,12 +28,10 @@ export const profile: Profile = {
     { label: "Full Name", value: "Syed Anwaar Hussain" },
     { label: "Date of Birth", value: "December 13, 1997" },
     { label: "Age", value: "28 years" },
-    { label: "Height", value: "5'8\" (173 cm)" },
+    { label: "Height", value: "5'9\" (175 cm)" },
     { label: "Gender", value: "Male" },
-    { label: "Religion", value: "Muslim" },
     { label: "Mother Tongue", value: "Urdu" },
     { label: "Marital Status", value: "Single" },
-    { label: "Complexion", value: "Fair" },
     { label: "Hobbies & Interests", value: "Fitness, Traveling, Gaming" }
   ],
   education: [
@@ -48,23 +46,24 @@ export const profile: Profile = {
   ],
   career: [
     { label: "Occupation", value: "Software Development Engineer" },
-    { label: "Employer", value: "Paycom Software Inc., Texas, United States" },
+    { label: "Employer", value: "Paycom Payroll LLC, Texas, United States" },
+    { label: "Previous Experience", value: "Software Quality Engineer at Amazon, India" },
     {
       label: "Career Goals",
       value:
-        "A driven Software Development Engineer focused on architecting robust, AI-powered solutions. Passionate about technological innovation, continuous learning, and delivering high-quality software that makes a tangible impact."
+        "An ambitious Software Development Engineer with a strong background in software quality and scalable systems. Passionate about tackling complex technical challenges, continuous learning, and building robust, user-centric applications that deliver significant impact."
     }
   ],
   family: {
     details: [
       { label: "Family Structure", value: "Nuclear Family" },
       { label: "Father's Name", value: "Syed Abrar Hussain" },
-      { label: "Father's Occupation", value: "Real Estate Businessman" },
-      { label: "Mother's Occupation", value: "Homemaker" }
+      { label: "Father's Occupation", value: "MBA (Ex-Manager in KSA), now a Real Estate Businessman" },
+      { label: "Mother's Occupation", value: "BA, Homemaker" }
     ],
     siblings: [
       "Syed Afraz Hussain - MS in Data Engineering, United States",
-      "Syed Ibraheem Hussain - Currently in 8th grade, India",
+      "Syed Ibraheem Hussain - In High School, India",
       "Younger Sister - Pursuing B.E. in Computer Science, India",
       "Younger Sister - Pursuing B.E. in Computer Science, India"
     ],
@@ -73,7 +72,8 @@ export const profile: Profile = {
       "We are a well-educated and respected Sunni Muslim family that firmly follows the Qur'an and Hadith as the foundation of our faith and daily life. We uphold Islamic principles, emphasizing honesty, integrity, and humility in all aspects of life. Our family strictly adheres to Tawheed and does not engage in any form of shirk. Education and moral values are deeply important to us, and we take pride in maintaining a strong legacy of knowledge, ethical conduct, and service to the community. We believe in a balanced approach to life, fostering mutual respect, compassion, and strong family bonds."
   },
   partnerPreferences: [
-    { label: "Preferred Age Range", value: "22-26 years" },
+    { label: "Preferred Age Range", value: "22-25 years" },
+    { label: "Preferred Height", value: "5'4\" - 5'7\" (163 cm - 170 cm)" },
     {
       label: "Preferred Education Level",
       value:
@@ -92,17 +92,12 @@ export const profile: Profile = {
   ],
   gallery: [
     "/gallery/image1.JPEG",
-    "/gallery/image2.JPEG",
     "/gallery/image3.jpg",
     "/gallery/hero.jpg",
     "/gallery/image5.jpg",
     "/gallery/image6.JPEG",
-    "/gallery/image7.jpg",
-    "/gallery/image8.jpg",
-    "/gallery/image9.jpg",
     "/gallery/image10.jpg",
-    "/gallery/image11.jpg",
-    "/gallery/image4.JPEG"
+    "/gallery/image11.jpg"
   ],
   contact: [
     { label: "Phone Number", value: "+1 (940) 843-6383 / +1 (682) 557-2852" },

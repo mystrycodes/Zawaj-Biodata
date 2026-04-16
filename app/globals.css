@@ -368,7 +368,8 @@ ul.bullet-list li {
     min-height: auto;
   }
   .carousel-image-wrap {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: auto;
+    height: 60vh;
   }
 }
 
@@ -388,7 +389,8 @@ ul.bullet-list li {
     top: -70px;
   }
   .carousel-image-wrap {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: auto;
+    height: 70vh;
   }
 }
 
